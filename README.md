@@ -17,3 +17,4 @@ how to run :
  - move to /simple-java-oauth2
  - untuk run service docker-compose up
  - untuk stop service docker-compose down  
+ - akses swagger in http://localhost:8881/swagger-ui.html
