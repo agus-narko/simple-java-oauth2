@@ -13,7 +13,7 @@ fitur :
   - log
 
 how to run :
- - clone git
+ - clone git https://github.com/agus-narko/simple-java-oauth2.git
  - move to /simple-java-oauth2
  - run docker-compose up --build ,untuk rebuild ulang
  - atau run docker-compose up
