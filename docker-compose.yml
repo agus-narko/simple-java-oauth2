@@ -1,0 +1,39 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - '3307:3306'
+    expose:
+      - '3307'
+    volumes:
+      - my-db:/var/lib/mysql
+      - ./data/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+  
+  app:
+    build: ./spring-with-ouath
+    container_name: app
+    environment:
+      MYSQL_SERVER: 'db'
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+    depends_on:
+      - db
+    ports:
+      - 8881:8881
+    links:
+      - db
+    expose:
+      # Opens port 3306 on the container
+      - '8881'
+# Names our volume
+volumes:
+  my-db:
