@@ -15,6 +15,5 @@ fitur :
 how to run :
  - clone git https://github.com/agus-narko/simple-java-oauth2.git
  - move to /simple-java-oauth2
- - run docker-compose up --build ,untuk rebuild ulang
- - atau run docker-compose up
- - untuk stop run docker-compose down  
+ - untuk run service docker-compose up
+ - untuk stop service docker-compose down  
